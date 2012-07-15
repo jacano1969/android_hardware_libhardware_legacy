@@ -285,6 +285,7 @@ public:
         FORCE_BT_DESK_DOCK,
         FORCE_ANALOG_DOCK,
         FORCE_DIGITAL_DOCK,
+        FORCE_NO_BT_A2DP,
         NUM_FORCE_CONFIG,
         FORCE_DEFAULT = FORCE_NONE
     };
@@ -332,10 +333,10 @@ public:
         return audio_is_low_visibility((audio_stream_type_t)stream);
     }
     static bool isValidFormat(uint32_t format) {
-        return audio_is_valid_format(format);
+        return audio_is_valid_format((audio_format_t) format);
     }
     static bool isLinearPCM(uint32_t format) {
-        return audio_is_linear_pcm(format);
+        return audio_is_linear_pcm((audio_format_t) format);
     }
     static bool isOutputChannel(uint32_t channel) {
         return audio_is_output_channel(channel);
